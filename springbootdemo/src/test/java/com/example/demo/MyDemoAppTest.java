@@ -7,16 +7,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringBootDemoApplicationTests {
+public class MyDemoAppTest {
 
 	@Test
 	public void contextLoads() {
 	}
-	
-	/* 1 project cannot have more than 1 @SpringBootApplication, therefore this test is disabled
-	@Test
+    
+    @Test
     public void testMain() {
-	    SpringBootDemoApplication.main(new String[] {});
+        MyDemoApp.main(new String[] {});
     }
-    */
+    
+	
 }

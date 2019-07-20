@@ -6,12 +6,10 @@ build/
 !**/src/main/**
 !**/src/test/**
 
-
 ### Eclipse ### include all Eclipse project files
 #.settings
 #.classpath
 #.project
-
 
 ### STS ###
 .apt_generated

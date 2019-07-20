@@ -48,7 +48,7 @@ buildScan {
 }
 
 bootJar {
-    mainClassName = 'com.example.demo.MyDemoApp'
+    mainClassName = 'com.example.mvc.SpringBootMvcApplication'
 }
 
 // added task for >gradlew build runJar

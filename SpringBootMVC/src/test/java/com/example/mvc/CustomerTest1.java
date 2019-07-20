@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class CustomerTest1 {
 
+    
     @Test
     void testHashCode() {
         //fail("Not yet implemented"); // TODO

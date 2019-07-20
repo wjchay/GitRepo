@@ -1,4 +1,5 @@
 plugins {
+	id "com.gradle.build-scan" version "2.3"
 	id 'org.springframework.boot' version '2.1.6.RELEASE'
 	id 'java'
 }
@@ -36,4 +37,23 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+buildScan {
+    // always accept the terms of service
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+    // always publish a build scan
+    publishAlways()
+}
+
+bootJar {
+    mainClassName = 'com.example.demo.MyDemoApp'
+}
+
+// added task for >gradlew build runJar
+// to run from command line
+task runJar(type: JavaExec) {
+    main = "-jar";
+    args jar.archivePath
 }

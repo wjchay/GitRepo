@@ -1,0 +1,58 @@
+plugins {
+	id 'com.gradle.build-scan' version "2.3"
+    id 'java'
+    id 'war'
+    id 'org.gretty' version '2.3.1'
+}
+apply plugin : 'eclipse'
+buildScan {
+    // always accept the terms of service
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+    // always publish a build scan
+    publishAlways()
+}
+
+sourceCompatibility = '12'
+
+gretty {
+    integrationTestTask = 'test'  
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.19'
+    testCompile 'io.github.bonigarcia:webdrivermanager:1.6.1' 
+    testCompile 'org.seleniumhq.selenium:selenium-java:3.3.1'
+}
+
+/*
+dependencies {
+	// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina
+	//compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '9.0.22'
+	//providedCompile 'org.apache.tomcat:tomcat-catalina:9.0.22'
+    //providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    //runtime 'org.apache.tomcat:tomcat-catalina:9.0.22'
+    providedCompile 'javax.servlet.jsp:jsp-api:2.2.1-b03'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.19' 
+    testCompile 'org.seleniumhq.selenium:selenium-java:3.3.1'
+    testCompile 'io.github.bonigarcia:webdrivermanager:3.6.1'
+    testCompile 'io.github.bonigarcia:selenium-jupiter:3.2.1'
+}
+*/
+
+/*
+dependencies {
+    compile 'javax.servlet:javax.servlet-api:3.1.0' 
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.19'
+    testCompile 'io.github.bonigarcia:webdrivermanager:1.6.1' 
+    testCompile 'org.seleniumhq.selenium:selenium-java:3.3.1'
+}
+*/
